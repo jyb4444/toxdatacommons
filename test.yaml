@@ -1,0 +1,53 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "test"
+title: test666
+type: object
+category: administrative
+program: '*'
+project: '*'
+description: >
+  test of creating new model
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+required:
+  - type
+  - tester_id
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, tester_id]
+
+links: 
+  - name: projects
+    backref: studies
+    label: member_of
+    target_type: project
+    multiplicity: many_to_one
+    required: true
+
+properties:
+  type:
+    enum: ["test"]
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  tester_id:
+    type: string
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
+  test_title:
+    type: string
+  test_description:
+    type: string
+  test_data:
+    $ref: "_definitions.yaml#/testData"
