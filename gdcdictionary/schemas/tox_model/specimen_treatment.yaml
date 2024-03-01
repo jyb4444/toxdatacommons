@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "specimen"
-title: specimen
+id: "specimen_treatment"
+title: specimen_treatment
 type: object
 category: administrative
 program: '*'
 project: '*'
 description: >
-  description of specimen.
+  description of specimen_treatment.
 additionalProperties: false
 submittable: true
 validators: null
@@ -28,32 +28,36 @@ uniqueKeys:
   - [ project_id, submitter_id]
 
 links: 
-  - name: studies
-    backref: specimens
+  - name: specimens
+    backref: specimen_treatments
     label: member_of
-    target_type: study
+    target_type: specimen
     multiplicity: many_to_one
     required: true
 
 properties:
   type:
-    enum: ["specimen"]
+    enum: ["specimen_treatment"]
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
-  submitter_id:
+  input_amount:
     type: string
-  specimen_name:
+  specimen_test_article_dtxsid:
     type: string
-  specimen_type:
+  specimen_test_article_name:
     type: string
-  collection_location:
+  specimen_vehicle_dtxsid:
     type: string
-  collection_method:
+  specimen_vehicle_name:
     type: string
-  collection_amount:
+  test_article_label:
     type: string
-  collection_date:
+  test_article_source:
+    type: string
+  test_article_amount:
+    type: string
+  specimen_treatment_date:
     $ref: "_definitions.yaml#/datetime"
   provenance: 
     type: string
