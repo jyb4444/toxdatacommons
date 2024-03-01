@@ -41,32 +41,32 @@ properties:
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
-    projects:
+  projects:
       $ref: "_definitions.yaml#/to_one"
-    submitter_id:
-      type: string
-    specimen_name:
-      type: string
-    specimen_type:
-      type: string
-    collection_location:
-      type: string
-    collection_method:
-      type: string
-    collection_amount:
-      type: string
-    collection_date:
-      $ref: "_definitions.yaml#/datetime"
-    provenance: 
-      type: string
-      description: "template version"
-    state:
-      $ref: "_definitions.yaml#/state"
-    project_id:
-      $ref: "_definitions.yaml#/project_id"
-    created_datetime:
-      $ref: "_definitions.yaml#/datetime"
-    updated_datetime:
-      $ref: "_definitions.yaml#/datetime"
-    project_id:
-      $ref: "_definitions.yaml#/project_id"
+  submitter_id:
+    type: string
+  specimen_name:
+    type: string
+  specimen_type:
+    type: string
+  collection_location:
+    type: string
+  collection_method:
+    type: string
+  collection_amount:
+    type: string
+  collection_date:
+    $ref: "_definitions.yaml#/datetime"
+  provenance: 
+    type: string
+    description: "template version"
+  state:
+    $ref: "_definitions.yaml#/state"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
