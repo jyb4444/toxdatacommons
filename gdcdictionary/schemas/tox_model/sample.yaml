@@ -51,7 +51,7 @@ links:
       label: member_of
       target_type: specimen_treatment
       multiplicity: many_to_one
-      requried: false
+      required: false
 
 properties: 
   type:
