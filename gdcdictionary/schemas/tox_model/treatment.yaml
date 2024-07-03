@@ -45,6 +45,12 @@ links:
       target_type: cell_subject
       multiplicity: many_to_one
       required: false
+    - name: aliquots
+      backref: treatments
+      label: member_of
+      target_type: aliquot
+      multiplicity: many_to_one
+      required: false
 
 properties: 
   type:
@@ -57,6 +63,8 @@ properties:
   subjects:
     $ref: "_definitions.yaml#/to_many"
   cell_subjects:
+    $ref: "_definitions.yaml#/to_one"
+  aliquots:
     $ref: "_definitions.yaml#/to_one"
   date:
     type: string
