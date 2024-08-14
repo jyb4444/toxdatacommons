@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "specimen_sample"
-title: specimen_sample
+id: "sorption_assay"
+title: sorption_assay
 type: object
 category: administrative
 program: '*'
 project: '*'
 description: >
-  description of specimen_sample.
+  description of sorption_assay.
 additionalProperties: false
 submittable: true
 validators: null
@@ -28,35 +28,18 @@ uniqueKeys:
   - [ project_id, submitter_id]
 
 links: 
-  - exclusive: false
+  - name: specimen_samples
+    backref: sorption_assays
+    label: member_of
+    target_type: specimen_sample
+    multiplicity: many_to_one
     required: true
-    subgroup:
-    - name: specimens
-      backref: specimen_samples
-      label: member_of
-      target_type: specimen
-      multiplicity: many_to_one
-      required: true
-    - name: specimen_characteristics
-      backref: specimen_samples
-      label: member_of
-      target_type: specimen_characteristics
-      multiplicity: many_to_one
-      required: false
-      
+
 properties:
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
-  date:
-    type: string
-  weight:
-    type: float
-  volume:
-    type: float
-  collection_method:
-    type: string
-  collection_protocol:
+  information:
     type: string
   state:
     $ref: "_definitions.yaml#/state"

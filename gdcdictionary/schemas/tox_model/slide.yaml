@@ -34,6 +34,12 @@ links:
     target_type: aliquot
     multiplicity: many_to_one
     required: true
+  - name: specimen_samples
+    backref: slides
+    label: member_of
+    target_type: specimen_sample
+    multiplicity: many_to_one
+    required: false
 
 properties:
   id:
