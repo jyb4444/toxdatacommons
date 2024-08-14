@@ -22,6 +22,8 @@ systemProperties:
 required: 
   - type
   - submitter_id
+  - Feedstock_composition
+  - source
 
 uniqueKeys: 
   - [ id ]
@@ -58,6 +60,31 @@ properties:
   provenance: 
     type: string
     description: "template version"
+  Feedstock_composition:
+    enum:
+      - Algae
+      - Corn stover
+      - Grass
+      - Hard Wood
+      - Hull
+      - Manure
+      - Nutshell
+      - Other
+      - Other/ Mixed
+      - Pomace
+      - Sludge
+      - Soft Wood
+      - Wood
+  Optional_comments_about_Feedstock:
+    type: string
+  source:
+    enum:
+      - Commercial
+      - Non-commercial
+  Geographic Region:
+    type: string
+  Manufacturer:
+    type: string
   state:
     $ref: "_definitions.yaml#/state"
   project_id:
